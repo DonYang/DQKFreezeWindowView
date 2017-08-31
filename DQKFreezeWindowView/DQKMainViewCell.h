@@ -31,4 +31,9 @@ typedef NS_ENUM(NSInteger, DQKMainViewCellSeparatorStyle) {
 @property (assign, nonatomic) NSInteger sectionNumber;
 @property (strong, nonatomic) UIColor *lineColor;
 
+@property (assign, nonatomic) BOOL hideLeftLine;
+@property (assign, nonatomic) BOOL hideRightLine;
+@property (assign, nonatomic) BOOL hideTopLine;
+@property (assign, nonatomic) BOOL hideBottomLine;
+
 @end

@@ -29,4 +29,8 @@ typedef NS_ENUM(NSInteger, DQKSectionViewCellSeparatorStyle) {
 @property (strong, nonatomic) UIColor *lineColor;
 @property (strong, nonatomic) UIColor *bottomLineColor;
 
+@property (assign, nonatomic) BOOL hideLeftLine;
+@property (assign, nonatomic) BOOL hideRightLine;
+@property (assign, nonatomic) BOOL hideBottomLine;
+
 @end

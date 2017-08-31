@@ -87,6 +87,18 @@
     [self addSubview:_bottomLine];
 }
 
+- (void)setHideLeftLine:(BOOL)hideLeftLine {
+    [_leftLine setHidden: hideLeftLine];
+}
+
+- (void)setHideRightLine:(BOOL)hideRightLine {
+    [_rightLine setHidden: hideRightLine];
+}
+
+- (void)setHideBottomLine:(BOOL)hideBottomLine {
+    [_bottomLine setHidden: hideBottomLine];
+}
+
 - (void)removeLine {
     [self.leftLine removeFromSuperview];
     [self.rightLine removeFromSuperview];

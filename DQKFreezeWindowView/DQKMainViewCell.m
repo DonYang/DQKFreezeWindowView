@@ -28,6 +28,10 @@
         _rowNumber = 1;
         _sectionNumber = 1;
         _lineColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1];
+        _hideLeftLine = NO;
+        _hideRightLine = NO;
+        _hideTopLine = NO;
+        _hideBottomLine = NO;
         [self addLine];
         switch (style) {
             case DQKMainViewCellStyleDefault:
@@ -88,6 +92,22 @@
     _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height, self.frame.size.width, 0.5)];
     _bottomLine.backgroundColor = _lineColor;
     [self addSubview:_bottomLine];
+}
+
+- (void)setHideLeftLine:(BOOL)hideLeftLine {
+    [_leftLine setHidden: hideLeftLine];
+}
+
+- (void)setHideRightLine:(BOOL)hideRightLine {
+    [_rightLine setHidden: hideRightLine];
+}
+
+- (void)setHideTopLine:(BOOL)hideTopLine {
+    [_topLine setHidden: hideTopLine];
+}
+
+- (void)setHideBottomLine:(BOOL)hideBottomLine {
+    [_bottomLine setHidden: hideBottomLine];
 }
 
 - (void)removeLine {
