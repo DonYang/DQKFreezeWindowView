@@ -21,6 +21,7 @@
     self = [super init];
     if (self) {
         _reuseIdentifier = reuseIdentifier;
+        _lineColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1];
         [self addLine];
         switch (style) {
             case DQKRowViewCellStyleDefault:
@@ -55,13 +56,22 @@
     }
 }
 
+- (void)setLineColor:(UIColor *)lineColor {
+    if(lineColor == nil){
+        return;
+    }
+    
+    _lineColor = lineColor;
+    _topLine.backgroundColor = _lineColor;
+    _bottomLine.backgroundColor = _lineColor;
+}
+
 - (void)addLine {
-    UIColor *lineGrayColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1];
     _topLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 0.5)];
-    _topLine.backgroundColor = lineGrayColor;
+    _topLine.backgroundColor = _lineColor;
     [self addSubview:_topLine];
     _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height, self.frame.size.width, 0.5)];
-    _bottomLine.backgroundColor = lineGrayColor;
+    _bottomLine.backgroundColor = _lineColor;
     [self addSubview:_bottomLine];
 }
 

@@ -27,5 +27,6 @@ typedef NS_ENUM(NSInteger, DQKRowViewCellSeparatorStyle) {
 @property (strong, nonatomic) NSString *title;
 @property (readonly, assign, nonatomic) DQKRowViewCellStyle style;
 @property (assign, nonatomic) DQKRowViewCellSeparatorStyle separatorStyle;
+@property (strong, nonatomic) UIColor *lineColor;
 
 @end

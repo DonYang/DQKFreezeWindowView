@@ -29,5 +29,6 @@ typedef NS_ENUM(NSInteger, DQKMainViewCellSeparatorStyle) {
 @property (assign, nonatomic) DQKMainViewCellSeparatorStyle separatorStyle;
 @property (assign, nonatomic) NSInteger rowNumber;
 @property (assign, nonatomic) NSInteger sectionNumber;
+@property (strong, nonatomic) UIColor *lineColor;
 
 @end

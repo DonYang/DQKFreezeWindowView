@@ -21,6 +21,7 @@
     self = [super init];
     if (self) {
         _reuseIdentifier = reuseIdentifier;
+        _lineColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1];
         [self addLine];
         switch (style) {
             case DQKSectionViewCellStyleDefault:
@@ -55,13 +56,23 @@
     }
 }
 
+- (void)setLineColor:(UIColor *)lineColor {
+    if(lineColor == nil){
+        return;
+    }
+    
+    _lineColor = lineColor;
+    _leftLine.backgroundColor = _lineColor;
+    _rightLine.backgroundColor = _lineColor;
+    _bottomLine.backgroundColor = _lineColor;
+}
+
 - (void)addLine {
-    UIColor *lineGrayColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1];
     _leftLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0.5, self.frame.size.height)];
-    _leftLine.backgroundColor = lineGrayColor;
+    _leftLine.backgroundColor = _lineColor;
     [self addSubview:_leftLine];
     _rightLine = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width, 0, 0.5, self.frame.size.height)];
-    _rightLine.backgroundColor = lineGrayColor;
+    _rightLine.backgroundColor = _lineColor;
     [self addSubview:_rightLine];
     _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5)];
     _bottomLine.backgroundColor = [UIColor grayColor];
