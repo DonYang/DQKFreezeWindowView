@@ -27,5 +27,6 @@ typedef NS_ENUM(NSInteger, DQKSectionViewCellSeparatorStyle) {
 @property (assign, nonatomic) DQKSectionViewCellSeparatorStyle separatorStyle;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) UIColor *lineColor;
+@property (strong, nonatomic) UIColor *bottomLineColor;
 
 @end
